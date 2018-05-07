@@ -1,0 +1,46 @@
+header{
+  .navbar{
+    border-radius: 0;
+    background-color: #e44a00ed;
+  }
+
+  .navbar-brand{
+    color: #cacaca;
+  }
+
+  .nav-link{
+    color: #ffffff;
+  }
+}
+
+
+footer{
+  .navbar{
+    border-radius: 0;
+    background-color: #e44a00ed;
+    line-height: 0.6;
+  }
+
+  .navbar-brand{
+    color: white;
+    font-size: 0.8rem;
+    margin: auto;
+
+  }
+}
+
+.jumbotron{
+  margin-top: 3rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+  background-color: #e0e0e0;
+
+  .letter{
+    color: #504dff;
+  }
+
+  .btn{
+    font-size: 20px;
+  }
+}
