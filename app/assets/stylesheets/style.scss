@@ -1,11 +1,11 @@
 header{
   .navbar{
     border-radius: 0;
-    background-color: #e44a00ed;
+    background-color: #ff9765ed;
   }
 
   .navbar-brand{
-    color: #cacaca;
+    color: #545454;
   }
 
   .nav-link{
@@ -17,7 +17,7 @@ header{
 footer{
   .navbar{
     border-radius: 0;
-    background-color: #e44a00ed;
+    background-color: #ff9765ed;
     line-height: 0.6;
   }
 
@@ -28,6 +28,8 @@ footer{
 
   }
 }
+
+// root
 
 .jumbotron{
   margin-top: 3rem;
@@ -44,3 +46,21 @@ footer{
     font-size: 20px;
   }
 }
+
+// sign up
+
+.col-center{
+  float: none;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.form-group{
+  color: #635555;
+}
+
+.title{
+  margin-top: 2rem;
+}
+
+
