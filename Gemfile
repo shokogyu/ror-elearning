@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.1.1'  # 2018/5/5 add
 gem 'jquery-rails'           # 2018/5/5 add
 gem 'bcrypt', '3.1.11'       # 2018/5/8 add
+gem 'faker', '~> 1.8', '>= 1.8.7'            # 2018/5/8 add
+gem 'will_paginate', '3.1.6'                 # 2018/5/8 add
+gem 'will_paginate-bootstrap4'               # 2018/5/9 add
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
