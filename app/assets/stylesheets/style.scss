@@ -2,6 +2,7 @@ header{
   .navbar{
     border-radius: 0;
     background-color: #ff9765ed;
+    margin-bottom: 2.5rem;
   }
 
   .navbar-brand{
@@ -19,6 +20,7 @@ footer{
     border-radius: 0;
     background-color: #ff9765ed;
     line-height: 0.6;
+    margin-top: 3rem;
   }
 
   .navbar-brand{
@@ -61,6 +63,12 @@ footer{
 
 .title{
   margin-top: 2rem;
+}
+
+// all users list
+
+.users-list{
+  border-top: 1px solid #e8e8e8;
 }
 
 
