@@ -1,1 +1,31 @@
-SHOW
+<% provide(:title, @user.name + " Profile") %>
+
+<div class="row">
+    <div class="col-md-3 profile">
+        <%= gravatar_for(@user, 120) %>
+        <%= @user.name %>
+        <%= link_to "Edit", edit_user_path %>
+
+        <div>
+            Learned 100 words
+        </div>
+
+        <div>
+            Following 10
+            Followers 10
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div>
+            <%= link_to "Follow", "#", class: "btn btn-primary form-control" %>
+        </div>
+
+        <div class="activity">
+            <h2>Activity</h2>
+
+            test
+        </div>
+
+    </div>
+</div>
