@@ -10,4 +10,9 @@ Rails.application.routes.draw do
 
   resources :users,   except: :new
 
+  namespace :admin do
+    resources :categories
+    resources :dashboard, only: :index
+  end
+
 end

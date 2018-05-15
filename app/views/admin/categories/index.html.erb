@@ -1,0 +1,15 @@
+<%= provide(:title, "Admin/Category") %>
+
+<h1 class="text-center">Categories</h1>
+
+<div class="text-center"> 
+    <h6>
+        New Category? <%= link_to "Create here", new_admin_category_path %>.
+    </h6>
+</div>
+
+<div class="container">
+    <div class="row">
+    <%= render @categories %>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<%= provide(:title, "Admin/Dashboard") %>
+
+<h1 class="text-center">Admin Page</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbotron center">
+            <h1 class="display-6">Category</h1>
+            <p class="lead">You can add, edit and delete categories.</p>
+            <%= link_to "Go to category", admin_categories_path, class: "btn btn-danger" %>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="jumbotron center">
+            <h1 class="display-6">Word</h1>
+            <p class="lead">You can add, edit and delete words.</p>
+             <%= link_to "Go to word", "#", class: "btn btn-danger" %>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="jumbotron center">
+            <h1 class="display-6">User</h1>
+            <p class="lead">You can add, edit and delete users.</p>
+            <%= link_to "Go to user", "#", class: "btn btn-danger" %>
+        </div>
+    </div>
+</div>
