@@ -1,0 +1,9 @@
+<div class="col-md-6">
+    <div class="jumbotron center">
+        <h1 class="display-6"><%= category.title %></h1>
+        <p class="lead"><%= category.description %></p>
+        <%= link_to "Show", admin_category_path(category.id) %> | 
+        <%= link_to "Edit", edit_admin_category_path(category.id) %> | 
+        <%= link_to "Delete", admin_category_path(category.id), method: :delete, data:{confirm: 'Are you sure?'}  %>
+    </div>
+</div>

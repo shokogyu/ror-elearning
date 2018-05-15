@@ -3,7 +3,7 @@
         <h5>You have <%= pluralize(object.errors.count, "error") %> .</h5>
 
         <div class="alert alert-danger">
-            <% @user.errors.full_messages.each do |message| %>
+            <% object.errors.full_messages.each do |message| %>
                 <ul>
                     <li><%= message %></li>
                 </ul>
