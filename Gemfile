@@ -40,7 +40,7 @@ gem 'bcrypt', '3.1.11'       # 2018/5/8 add
 gem 'faker', '~> 1.8', '>= 1.8.7'            # 2018/5/8 add
 gem 'will_paginate', '3.1.6'                 # 2018/5/8 add
 gem 'will_paginate-bootstrap4'               # 2018/5/9 add
-
+gem 'popper_js', '~> 1.12.9'                 # 2018/5/11 add
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
