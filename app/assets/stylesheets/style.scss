@@ -82,10 +82,13 @@ footer{
 
 // all users list
 
-.users-list{
-  border-top: 1px solid #e8e8e8;
+ul.users-list{
   list-style: none;
-  margin: 1rem;
+
+  li{
+    border-top: 1px solid #e8e8e8;
+    margin: 1rem;
+  }
 }
 
 // profile(show)
