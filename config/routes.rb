@@ -12,8 +12,12 @@ Rails.application.routes.draw do
   resources :categories,    only: [:index, :show]
 
   namespace :admin do
-    resources :categories
+    resources :categories do
+      resources :words
+    end
+    
     resources :dashboard, only: :index
+    
   end
 
 end

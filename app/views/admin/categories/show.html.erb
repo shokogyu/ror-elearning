@@ -1,1 +1,47 @@
 <h1>Show Page</h1>
+
+<h6>You can add/edit/delete words under categories here !</h6>
+
+<!--  text-center -->
+
+<div class="card">
+  <div class="card-header text-white bg-info mb-3">
+    <div>
+      <strong>Category: </strong><%= @category.title %>
+      <div class="text-right">
+      <%= link_to "Add Word", new_admin_category_word_path(@category.id), class: "btn btn-light"%></div>
+    </div>
+    <div>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Word</th>
+          <th scope="col">Word Answer</th>
+          <th scope="col">Action</th>
+        </tr>  
+      </thead>
+      <tbody>
+        <% i = 1 %>
+        <% @word.each do |word| %>
+        <tr>
+          <th scope="row"><%= i %></th>
+          <td><%= word.content %></td>
+          <td><%= word.answers.find_by(correct: true).content %></td>
+          <td>@mdo</td>
+        </tr>
+        <% i = i + 1 %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer bg-info mb-3">
+  </div>
+</div>
+
+
+
+
