@@ -1,6 +1,7 @@
 class Admin::WordsController < ApplicationController
-  def index
+  before_action :admin_user
 
+  def index
   end
 
   def new
@@ -20,7 +21,6 @@ class Admin::WordsController < ApplicationController
       redirect_to admin_category_path(@category)
     else
       render 'new'
-
     end
   end
 

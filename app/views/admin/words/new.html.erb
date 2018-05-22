@@ -32,3 +32,9 @@
     <% end %>
 
 </div>
+
+<script>
+    $('#new_word input[type=checkbox]').change(function() {
+       $('#new_word input[type=checkbox]:checked').not(this).prop('checked', false);
+    });
+</script>
