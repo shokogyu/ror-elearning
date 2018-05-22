@@ -1,0 +1,40 @@
+<h1 class="text-center">Word</h1>
+
+<div class="col-md-6 col-center ">
+    
+    <%= form_for [:admin, @category, @word] do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <div class="form-group">
+            <%= f.label :word %>
+            <%= f.text_field :content, class: 'form-control' %>
+        </div>
+
+        <%= f.fields_for :answers do |a| %>
+        
+            <div class="form-group">
+                <%= a.label :option %>
+                <div class="row">
+                    <div class="col-md-11">
+                        <%= a.text_field :content, class: 'form-control' %>
+                    </div>
+
+                    <div class="col-md-1">
+                    <%= a.check_box :correct %>
+                    </div>
+                </div>
+            </div>
+
+        <% end %>
+
+        <%= f.submit class: "form-control btn btn-primary" %>
+
+    <% end %>
+
+</div>
+
+<script>
+    $('#new_word input[type=checkbox]').change(function() {
+       $('#new_word input[type=checkbox]:checked').not(this).prop('checked', false);
+    });
+</script>
