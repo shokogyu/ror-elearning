@@ -5,6 +5,4 @@ class WordAnswer < ApplicationRecord
                       uniqueness: true,
                       length: { maximum: 50 }
 
-  #validates :correct,  acceptance: true
-
 end
