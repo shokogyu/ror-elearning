@@ -31,7 +31,10 @@
           <th scope="row"><%= i %></th>
           <td><%= word.content %></td>
           <td><%= word.answers.find_by(correct: true).content %></td>
-          <td>@mdo</td>
+          <td>
+              <%= link_to "Edit", edit_admin_category_word_path(@category.id, word.id), class: "btn btn-primary" %>
+              <%= link_to "Remove", admin_category_word_path(@category.id), method: :delete, data:{confirm: 'Are you sure?'}, class: "btn btn-primary" %>
+          </td>
         </tr>
         <% i = i + 1 %>
         <% end %>
@@ -45,7 +48,4 @@
 <div>
     <%= link_to "←Back", admin_categories_path %>
 </div>
-
-
-
 
