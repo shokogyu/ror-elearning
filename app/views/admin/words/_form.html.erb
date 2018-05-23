@@ -1,4 +1,4 @@
-<%= form_for [:admin, @category, @word] do |f| %>
+<%= form_for [:admin, @category, @word], html: {class: "word_form"} do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
     <div class="form-group">
@@ -28,7 +28,7 @@
 <% end %>
 
 <script>
-    $('#new_word input[type=checkbox]').change(function() {
-       $('#new_word input[type=checkbox]:checked').not(this).prop('checked', false);
+    $('.word_form input[type=checkbox]').change(function() {
+       $('.word_form input[type=checkbox]:checked').not(this).prop('checked', false);
     });
 </script>
