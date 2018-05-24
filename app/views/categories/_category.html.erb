@@ -2,6 +2,6 @@
     <div class="jumbotron center category">
         <h1 class="display-6"><%= category.title %></h1>
         <p class="lead"><%= category.description %></p>
-        <%= link_to "Start", "#", class: "btn btn-warning" %>
+        <%= button_to "Start", category_lessons_path(category.id), class: "btn btn-warning" %>
     </div>
 </div>
