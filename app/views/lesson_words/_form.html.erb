@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header text-black bg-warning mb-3"><strong>Category : </strong><%= @category.title %></div>
+    <div class="card-body ">
+        <h5 class="card-title number">
+            <%= @i+1 %>/<%= @lesson_words.count %>
+        </h5>
+
+        <div class="row">
+            <div class="col-md-5 content">
+                <div class="card-text text-center">
+                    <%= @word.content %>
+                 </div>
+            </div>
+
+            <div class="col-md-7">
+                <% @answers.each do |answer| %>
+                    <%= button_to answer.content, category_lesson_lesson_word_path(word_answer_id: answer.id), class: "btn btn-primary answer", method: :patch %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
