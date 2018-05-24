@@ -21,7 +21,7 @@ class Admin::CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @word = @category.words.all.includes(:answers).where(word_answers: {correct: true})
+    @words = @category.words
   end
 
   def edit

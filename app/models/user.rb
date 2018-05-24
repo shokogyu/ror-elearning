@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   before_save :email_downcase
 
-  has_many :lessons
+  has_many :lessons, dependent: :destroy
 
   validates :name, presence: true,
                    length: {maximum: 50}

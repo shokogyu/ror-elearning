@@ -18,4 +18,14 @@ class LessonsController < ApplicationController
     end
   end
 
+  def show
+    @lesson = Lesson.find(params[:id])
+    @lesson_words = @lesson.lesson_words
+
+    @count = 0
+    @lesson_words.each do |l|
+      @count += 1 unless l.word_answer.correct == false
+    end
+  end
+
 end

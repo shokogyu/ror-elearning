@@ -1,5 +1,6 @@
 class WordAnswer < ApplicationRecord
   belongs_to :word
+  has_one :lesson_word
 
   validates :content, presence: true,
                       uniqueness: true,
