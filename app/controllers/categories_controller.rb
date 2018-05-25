@@ -3,6 +3,5 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
-    Lesson.where(user_id: current_user.id, )
   end
 end
