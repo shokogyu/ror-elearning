@@ -1,42 +1,42 @@
 <h1 class="text-center">Result</h1>
 
 <div class="col-md-10 col-center">
-<div class="card border-warning mb-3" style="max-width: 70rem;">
-  <div class="card-header"><span style="color:#ff8100;font-size:25px">Category : <%= @lesson.category.title %></span></div>
-  <div class="card-body text-secondary">
-    <h5 class="card-title">Score : <%= @count %>/<%= @lesson_words.count %></h5>
-    <div class="card-text">
-        <table class="table table-striped">
-          <thead>
-            <tr class="table-header">
-              <th scope="col">No.</th>
-              <th scope="col">Word</th>
-              <th scope="col">Correct Answer</th>
-              <th scope="col">Your answer</th>
-              <th scope="col">Result</th>
-            </tr>  
-          </thead>
-          <tbody>
-            <% i = 1 %>
-            <% @lesson_words.each do |l| %>
-                <tr class="table-data">
-                    <td><%= i %></td>
-                    <td><%= l.word.content %></td>
-                    <td><%= l.word.answers.find_by(correct: true).content %></td>
-                    <td><%= l.word_answer.content %></td>
-                    <td>
-                        <% if l.word_answer.correct == true %>
-                            <span style="color:red;font-size:30px">○</span>
-                        <% else %>
-                            <span style="color:blue;font-size:40px">×</span>
+    <div class="card border-warning mb-3" style="max-width: 70rem;">
+        <div class="card-header"><span style="color:#ff8100;font-size:25px">Category : <%= @lesson.category.title %></span></div>
+        <div class="card-body text-secondary">
+            <h5 class="card-title">Score : <%= @correct_answers_count %>/<%= @lesson_words.count %></h5>
+            <div class="card-text">
+                <table class="table table-striped">
+                    <thead>
+                          <tr class="table-header">
+                                <th scope="col">No.</th>
+                                <th scope="col">Word</th>
+                                <th scope="col">Correct Answer</th>
+                                <th scope="col">Your answer</th>
+                                <th scope="col">Result</th>
+                          </tr>  
+                    </thead>
+                    <tbody>
+                        <% i = 1 %>
+                        <% @lesson_words.each do |l| %>
+                            <tr class="table-data">
+                                <td><%= i %></td>
+                                <td><%= l.word.content %></td>
+                                <td><%= l.word.answers.find_by(correct: true).content %></td>
+                                <td><%= l.word_answer.content %></td>
+                                <td>
+                                    <% if l.word_answer.correct == true %>
+                                        <span style="color:red;font-size:30px">○</span>
+                                    <% else %>
+                                        <span style="color:blue;font-size:40px">×</span>
+                                    <% end %>
+                                </td>
+                            </tr>
+                            <% i += 1 %>
                         <% end %>
-                    </td>
-                </tr>
-                <% i += 1 %>
-            <% end %>
-          </tbody>
-        </table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </div>

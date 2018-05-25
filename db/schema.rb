@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_020239) do
+ActiveRecord::Schema.define(version: 2018_05_25_012109) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 2018_05_23_020239) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_lessons_on_category_id"
     t.index ["user_id"], name: "index_lessons_on_user_id"
+  end
+
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,11 +77,11 @@ ActiveRecord::Schema.define(version: 2018_05_23_020239) do
     t.index ["category_id"], name: "index_words_on_category_id"
   end
 
-  add_foreign_key "lesson_words", "lessons"
-  add_foreign_key "lesson_words", "word_answers"
-  add_foreign_key "lesson_words", "words"
-  add_foreign_key "lessons", "categories"
-  add_foreign_key "lessons", "users"
-  add_foreign_key "word_answers", "words"
-  add_foreign_key "words", "categories"
+  add_foreign_key "lesson_words", "lessons", on_delete: :cascade
+  add_foreign_key "lesson_words", "word_answers", on_delete: :cascade
+  add_foreign_key "lesson_words", "words", on_delete: :cascade
+  add_foreign_key "lessons", "categories", on_delete: :cascade
+  add_foreign_key "lessons", "users", on_delete: :cascade
+  add_foreign_key "word_answers", "words", on_delete: :cascade
+  add_foreign_key "words", "categories", on_delete: :cascade
 end

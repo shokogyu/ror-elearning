@@ -9,4 +9,8 @@ class Category < ApplicationRecord
 
   validates :description, presence: true,
                           length: {maximum: 255}
+
+  def lesson(user)
+  	self.lessons.where("user_id = ?", user.id).first
+  end
 end

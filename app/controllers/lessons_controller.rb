@@ -22,10 +22,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
     @lesson_words = @lesson.lesson_words
 
-    @count = 0
-    @lesson_words.each do |l|
-      @count += 1 unless l.word_answer.correct == false
-    end
+    @correct_answers_count = @lesson.correct_answers.count
   end
 
 end
