@@ -2,6 +2,11 @@
     <div class="jumbotron center category">
         <h1 class="display-6"><%= category.title %></h1>
         <p class="lead"><%= category.description %></p>
-        <%= button_to "Start", category_lessons_path(category.id), class: "btn btn-warning" %>
+        <% if lesson = category.lesson(current_user) %>
+            <%= link_to "Show Result", category_lesson_path(category.id, lesson.id), class: "btn btn-warning" %>
+            Score : <%= lesson.correct_answers.count %>/<%= lesson.lesson_words.count %>
+        <% else %>
+            <%= button_to "Start", category_lessons_path(category.id), class: "btn btn-warning" %>
+        <% end %>
     </div>
 </div>

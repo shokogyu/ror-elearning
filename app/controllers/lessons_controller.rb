@@ -18,4 +18,11 @@ class LessonsController < ApplicationController
     end
   end
 
+  def show
+    @lesson = Lesson.find(params[:id])
+    @lesson_words = @lesson.lesson_words
+
+    @correct_answers_count = @lesson.correct_answers.count
+  end
+
 end

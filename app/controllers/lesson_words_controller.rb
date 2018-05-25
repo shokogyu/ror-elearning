@@ -20,7 +20,7 @@ class LessonWordsController < ApplicationController
     unless @lesson_word == @lesson_words.last
       redirect_to category_lesson_lesson_word_path(id: @lesson_words[i+1].id)
     else
-      redirect_to category_lesson_path(@lesson.id)
+      redirect_to category_lesson_path(id: @lesson.id)
     end
   end
 
